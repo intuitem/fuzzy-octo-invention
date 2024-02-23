@@ -16,5 +16,10 @@
   },
   "yaml.schemas": {
     "./.vscode/astrowind/config-schema.json": "/src/config.yaml"
+  },
+  "workbench.colorCustomizations": {
+    "activityBar.background": "#472501",
+    "titleBar.activeBackground": "#633401",
+    "titleBar.activeForeground": "#FFFBF6"
   }
 }
