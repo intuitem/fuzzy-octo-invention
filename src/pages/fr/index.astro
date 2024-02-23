@@ -19,7 +19,7 @@ import PortableText from "~/components/portabletext/PortableText.astro";
 import { sanityClient } from "sanity:client";
 const heroSection = await sanityClient.fetch(`*[_type == "siteSection" && slug == "hero"]{
     slug,
-    "body": body[_key == "en"][0].value,
+    "body": body[_key == "fr"][0].value,
 }`);
 
 const featuresContent = await sanityClient.fetch(`*[_type == "feature"]{
@@ -39,11 +39,11 @@ const featuresContent = await sanityClient.fetch(`*[_type == "feature"]{
     actions={[
       {
         variant: 'primary',
-        text: 'Get started',
+        text: 'Commencer',
         href: '/contact',
         icon: 'tabler:cloud',
       },
-      { text: 'Learn more', href: '#features', icon: 'tabler:mood-plus'},
+      { text: 'Fonctionnalités', href: '#features', icon: 'tabler:mood-plus'},
     ]}
     image={{ src: '~/assets/images/hero.png', alt: 'AstroWind Hero Image' }}
   >
@@ -66,9 +66,9 @@ const featuresContent = await sanityClient.fetch(`*[_type == "feature"]{
 
   <Features
     id="features"
-    tagline="Features"
-    title="What you get with CISO Assistant"
-    subtitle="Learn more about the features that make CISO Assistant the best choice for your security team. We are constantly working to improve our product, so stay tuned for more features!"
+    tagline="Fonctionnalités"
+    title="Ce que vous obtenez avec CISO Assistant"
+    subtitle="Découvrez comment CISO Assistant peut vous aider à améliorer votre sécurité et optimiser votre temps."
     items={featuresContent}
   />
 
