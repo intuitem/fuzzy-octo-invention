@@ -22,10 +22,14 @@ const heroSection = await sanityClient.fetch(`*[_type == "siteSection" && slug =
     "body": body[_key == "en"][0].value,
 }`);
 
-import { getRelativeLocaleUrl } from 'astro:i18n';
+const featuresContent = await sanityClient.fetch(`*[_type == "feature"]{
+  "title": title[_key == "fr"][0].value,
+  "description": description[_key == "fr"][0].value,
+  icon,
+  slug,
+} | order(slug asc)`);
 
-// defaultLocale is "es"
-const aboutURL=getRelativeLocaleUrl("en", "about");
+
 ---
 
 <Layout metadata={metadata}>
@@ -36,11 +40,10 @@ const aboutURL=getRelativeLocaleUrl("en", "about");
       {
         variant: 'primary',
         text: 'Get started',
-        href: 'https://github.com/onwidget/astrowind',
-        target: '_blank',
+        href: '/contact',
         icon: 'tabler:cloud',
       },
-      { text: 'Community', href: '#features', icon: 'tabler:brand-github'},
+      { text: 'Learn more', href: '#features', icon: 'tabler:mood-plus'},
     ]}
     image={{ src: '~/assets/images/hero.png', alt: 'AstroWind Hero Image' }}
   >
@@ -65,45 +68,8 @@ const aboutURL=getRelativeLocaleUrl("en", "about");
     id="features"
     tagline="Features"
     title="What you get with CISO Assistant"
-    subtitle="One of the most professional and comprehensive templates currently on the market. Most starred & forked Astro theme in 2022."
-    items={[
-      {
-        title: 'Astro + Tailwind CSS Integration',
-        description:
-          'A seamless integration between two great frameworks that offer high productivity, performance and versatility.',
-        icon: 'tabler:brand-tailwind',
-      },
-      {
-        title: 'Ready-to-use Components',
-        description:
-          'Widgets made with Tailwind CSS ready to be used in Marketing Websites, SaaS, Blogs, Personal Profiles, Small Business...',
-        icon: 'tabler:components',
-      },
-      {
-        title: 'Best Practices',
-        description:
-          'Creating secure, efficient, and user-friendly websites that deliver exceptional experiences and lasting value.',
-        icon: 'tabler:list-check',
-      },
-      {
-        title: 'Excellent Page Speed',
-        description:
-          'Having a good page speed impacts organic search ranking, improves user experience (UI/UX) and increase conversion rates.',
-        icon: 'tabler:rocket',
-      },
-      {
-        title: 'Search Engine Optimization (SEO)',
-        description:
-          "SEO lies in its ability to enhance a website's visibility, driving organic traffic and enabling it to reach a wider audience.",
-        icon: 'tabler:arrows-right-left',
-      },
-      {
-        title: 'Open to new ideas and contributions',
-        description:
-          'Embracing a culture that is open to new ideas and contributions is integral fostering innovation, collaboration, and a dynamic user experience.',
-        icon: 'tabler:bulb',
-      },
-    ]}
+    subtitle="Learn more about the features that make CISO Assistant the best choice for your security team. We are constantly working to improve our product, so stay tuned for more features!"
+    items={featuresContent}
   />
 
   
@@ -111,25 +77,31 @@ const aboutURL=getRelativeLocaleUrl("en", "about");
   <!-- Steps Widget ****************** -->
 
   <Steps
-    title="Get your dream website up and running in no time with AstroWind."
+    title="Let CISO Assistant work for you in no time in easy simple steps"
     items={[
       {
-        title: 'Step 1: <span class="font-medium">Download</span>',
+        title: 'Step 1: <span class="font-medium">Choose your deployment</span>',
         description:
-          "Kickstart with GitHub! Either fork the AstroWind template or simply click 'Use this template'. Your canvas awaits, ready for your digital masterpiece. In just a few clicks, you've already set the foundation.",
+          "Kickstart with the free instance or GitHub! The choice is yours. We're here to make your journey as smooth as possible. So, take your pick and let's get started!",
         icon: 'tabler:package',
       },
       {
-        title: 'Step 2: <span class="font-medium">Add content</em>',
+        title: 'Step 2.a: <span class="font-medium">Experiment and Add your content</span>',
         description:
-          "Pour your vision into it. Add images, text, and all that jazz to breathe life into your digital space. Remember, it's the content that tells your story, so make it captivating.",
+          "Follow the documentation to get started with CISO assistant. You can add your own content and experiment with the features. We're here to help you every step of the way on our Discord server.",
         icon: 'tabler:letter-case',
       },
       {
-        title: 'Step 3: <span class="font-medium">Customize styles</span>',
+        title: 'Step 2.b: <span class="font-medium">Discuss specific features/needs</span>',
         description:
-          'Give it your personal touch. Tailor colors, fonts, and layouts until it feels just right. Your unique flair, amplified by AstroWind! Precision in design ensures a seamless user experience.',
+          'Either you are looking for a specific feature or you have a specific need, we are here to help you. Any customization will be covered by the enterprise plan support and can be tailored to your needs.',
         icon: 'tabler:paint',
+      },
+{
+        title: 'Step 3: <span class="font-medium">Upgrade your plan</span>',
+        description:
+          'If you are happy with the community edition then we are happy for you. We encourage you to upgrade to Pro or Enterprise to get the most out of CISO Assistant and data migration is guaranteed.',
+        icon: 'tabler:rocket',
       },
       {
         title: 'Ready!',
@@ -151,8 +123,8 @@ const aboutURL=getRelativeLocaleUrl("en", "about");
   <!-- Brands Widget ****************** -->
 
   <Brands
-    title="Partnerships & Collaborations"
-    subtitle="At Astrowind, we believe in the power of collaboration to drive innovation and create exceptional experiences."
+    title="References & Collaborations"
+    subtitle="Some of the organizations that we had the pleasure to work with:"
     icons={[]}
     images={[
       {
@@ -203,20 +175,25 @@ const aboutURL=getRelativeLocaleUrl("en", "about");
     actions={[
       {
         variant: 'primary',
-        text: 'Get template',
-        href: 'https://github.com/onwidget/astrowind',
-        target: '_blank',
-        icon: 'tabler:download',
+        text: 'Free instance',
+        href: '/contact',
+        icon: 'tabler:cloud',
+      },
+      {
+        variant: 'secondary',
+        text: 'Walkthrough',
+        href: '/ciso-assistant',
+        icon: 'tabler:mood-plus',
       },
     ]}
   >
     <Fragment slot="title">
-      Astro&nbsp;+&nbsp;<br class="block sm:hidden" /><span class="sm:whitespace-nowrap">Tailwind CSS</span>
+      Ready to get started?
     </Fragment>
 
     <Fragment slot="subtitle">
-      Be very surprised by these huge fake numbers you are seeing on this page. <br class="hidden md:inline" />Don't
-      waste more time! :P
+      Nothing better than a free instance to test it out and find out how CISO Assistant can help you. Don't
+      waste more time on low values operations and start focusing on what really matters.
     </Fragment>
   </CallToAction>
 </Layout>
