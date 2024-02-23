@@ -40,16 +40,20 @@ const featuresContent = await sanityClient.fetch(`*[_type == "feature"]{
       {
         variant: 'primary',
         text: 'Get started',
+
         href: '/contact',
         icon: 'tabler:cloud',
       },
       { text: 'Learn more', href: '#features', icon: 'tabler:mood-plus'},
+
     ]}
     image={{ src: '~/assets/images/hero.png', alt: 'AstroWind Hero Image' }}
   >
     <Fragment slot="title">
+
       We 
       <span class="text-accent dark:text-white highlight"> simplify</span> the work of cyber security teams
+
     </Fragment>
 
     <Fragment slot="subtitle">
@@ -123,8 +127,10 @@ const featuresContent = await sanityClient.fetch(`*[_type == "feature"]{
   <!-- Brands Widget ****************** -->
 
   <Brands
+
     title="References & Collaborations"
     subtitle="Some of the organizations that we had the pleasure to work with:"
+
     icons={[]}
     images={[
       {

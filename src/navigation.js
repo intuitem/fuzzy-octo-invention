@@ -7,7 +7,9 @@ export const headerData = {
       links: [
         {
           text: 'Ciso Assistant',
+
           href: getPermalink('/ciso-assistant'),
+
         },
         {
           text: 'Services',
@@ -24,6 +26,7 @@ export const headerData = {
         },
         {
           text: 'Docs',
+
           href: 'https://intuitem.gitbook.io/product-docs/',
           skipUrlLocalization: true,
         },
@@ -39,6 +42,21 @@ export const headerData = {
         {
           text: 'Support',
           href: getPermalink('/support'),
+
+          href: getPermalink('/contact'),
+        },
+        {
+          text: 'Community',
+          href: getPermalink('/community'),
+        },
+        {
+          text: 'Pricing',
+          href: getPermalink('/pricing'),
+        },
+        {
+          text: 'About us',
+          href: getPermalink('/about'),
+
         },
 
       ],
@@ -46,11 +64,13 @@ export const headerData = {
     {
       text: 'Blog',
       href: getBlogPermalink(),
+
       skipUrlLocalization: true,
 
     },
   ],
   actions: [{ text: 'Community', href: 'https://github.com/intuitem/ciso-assistant-community', target: '_blank' }],
+
 };
 
 export const footerData = {
@@ -103,6 +123,8 @@ export const footerData = {
     { ariaLabel: 'Github', icon: 'tabler:brand-github', href: 'https://github.com/intuitem' },
   ],
   footNote: `
+
     intuitem - SARL au capital de 100.000€ - 8 rue des freres caudron, 78140 Vélizy-Villacoublay - SIRET 84450819200029 RCS Versailles
+
   `,
 };
