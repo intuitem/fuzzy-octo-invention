@@ -7,7 +7,7 @@ export const headerData = {
       links: [
         {
           text: 'Ciso Assistant',
-          href: getPermalink('/homes/saas'),
+          href: getPermalink('/ciso-assistant'),
         },
         {
           text: 'Services',
@@ -24,19 +24,21 @@ export const headerData = {
         },
         {
           text: 'Docs',
-          href: getPermalink('/contact'),
+          href: 'https://intuitem.gitbook.io/product-docs/',
+          skipUrlLocalization: true,
         },
         {
-          text: 'Community',
-          href: getPermalink('/community'),
+          text: 'Open Source',
+          href: 'https://github.com/intuitem/',
+          skipUrlLocalization: true,
         },
         {
-          text: 'Pricing',
-          href: getPermalink('/pricing'),
+          text: 'FAQ',
+          href: getPermalink('/faq'),
         },
         {
-          text: 'About us',
-          href: getPermalink('/about'),
+          text: 'Support',
+          href: getPermalink('/support'),
         },
 
       ],
@@ -44,56 +46,50 @@ export const headerData = {
     {
       text: 'Blog',
       href: getBlogPermalink(),
+      skipUrlLocalization: true,
 
     },
   ],
-  actions: [{ text: 'Free instance', href: 'https://github.com/intuitem/ciso-assistant-community', target: '_blank' }],
+  actions: [{ text: 'Community', href: 'https://github.com/intuitem/ciso-assistant-community', target: '_blank' }],
 };
 
 export const footerData = {
   links: [
     {
-      title: 'Product',
+      title: 'Solutions',
       links: [
-        { text: 'Features', href: '#' },
-        { text: 'Security', href: '#' },
-        { text: 'Team', href: '#' },
-        { text: 'Enterprise', href: '#' },
-        { text: 'Customer stories', href: '#' },
-        { text: 'Pricing', href: '#' },
-        { text: 'Resources', href: '#' },
+        { text: 'CISO Assistant', href: '/ciso-assistant' },
+        { text: 'Use cases', href: '/ciso-assistant#use-cases' },
+        { text: 'Pricing', href: '/pricing' },
+        { text: 'Customization', href: '/customization' },
+        { text: 'Services', href: '/services' },
       ],
     },
     {
-      title: 'Platform',
+      title: 'Ressources',
       links: [
-        { text: 'Developer API', href: '#' },
-        { text: 'Partners', href: '#' },
-        { text: 'Atom', href: '#' },
-        { text: 'Electron', href: '#' },
-        { text: 'AstroWind Desktop', href: '#' },
+        { text: 'Docs', href: '#' },
+        { text: 'Blog', href: '#' },
+        { text: 'Discord', href: '#' },
+        { text: 'Contact', href: '#' },
+        { text: 'Contrib', href: '#' },
       ],
     },
     {
       title: 'Support',
       links: [
+        { text: 'Portal', href: '#' },
         { text: 'Docs', href: '#' },
-        { text: 'Community Forum', href: '#' },
-        { text: 'Professional Services', href: '#' },
-        { text: 'Skills', href: '#' },
-        { text: 'Status', href: '#' },
+        { text: 'Discord', href: '#' },
       ],
     },
     {
       title: 'Company',
       links: [
         { text: 'About', href: '#' },
-        { text: 'Blog', href: '#' },
-        { text: 'Careers', href: '#' },
-        { text: 'Press', href: '#' },
         { text: 'Inclusion', href: '#' },
-        { text: 'Social Impact', href: '#' },
-        { text: 'Shop', href: '#' },
+        { text: 'Mission', href: '#' },
+        { text: 'References', href: '#' },
       ],
     },
   ],
@@ -107,6 +103,6 @@ export const footerData = {
     { ariaLabel: 'Github', icon: 'tabler:brand-github', href: 'https://github.com/intuitem' },
   ],
   footNote: `
-    intuitem - SARL au capital de 100.000€ - 123 rue de la rue, 75000 Paris
+    intuitem - SARL au capital de 100.000€ - 8 rue des freres caudron, 78140 Vélizy-Villacoublay - SIRET 84450819200029 RCS Versailles
   `,
 };

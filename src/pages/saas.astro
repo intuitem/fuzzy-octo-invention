@@ -43,10 +43,10 @@ const features = await sanityClient.fetch(`*[_type == "feature"]`);
   <!-- Hero2 Widget ******************* -->
 
   <Hero2
-    tagline="CISO Assistant"
+    tagline="SaaS Web Demo"
     actions={[
       { variant: 'primary', target: '_blank', text: 'Get Started', href: 'https://github.com/onwidget/astrowind' },
-      { text: 'Use cases', href: '#features' },
+      { text: 'Learn more', href: '#features' },
     ]}
     image={{
       src: 'https://images.unsplash.com/photo-1580481072645-022f9a6dbf27?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80',
@@ -54,9 +54,9 @@ const features = await sanityClient.fetch(`*[_type == "feature"]`);
     }}
   >
     <Fragment slot="title">
-      GRC can be tough:<br /> let <span class="text-accent dark:text-white highlight"
-        >CISO Assistant</span
-      > help you<br />
+      Simplify web design with Astrowind: <br /> your ultimate <span class="text-accent dark:text-white highlight"
+        >SaaS</span
+      > companion<br />
     </Fragment>
 
     <Fragment slot="subtitle">
@@ -68,6 +68,15 @@ const features = await sanityClient.fetch(`*[_type == "feature"]`);
     </Fragment>
   </Hero2>
 
+  <!-- Features Widget *************** -->
+
+  <Features
+    id="features"
+    title="Why choose AstroWind?"
+    subtitle="Each of the following features enhances AstroWind's value proposition."
+    columns={2}
+    items={}
+  />
 
   <!-- Content Widget **************** -->
 

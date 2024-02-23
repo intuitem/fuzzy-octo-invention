@@ -5,7 +5,6 @@ import ToggleTheme from "~/components/common/ToggleTheme.astro";
 import ToggleMenu from "~/components/common/ToggleMenu.astro";
 import Button from "~/components/ui/Button.astro"
 
-import { getHomePermalink } from "~/utils/permalinks";
 import { trimSlash, getAsset } from "~/utils/permalinks";
 import type { CallToAction } from "~/types";
 
@@ -45,6 +44,39 @@ const {
 } = Astro.props;
 
 const currentPath = `/${trimSlash(new URL(Astro.url).pathname)}`
+const currentLocale = Astro.currentLocale;
+
+function getHomePermalink() {
+  return currentLocale === "en" ? "/" : "/fr";
+}
+
+function localizeLink(link: string) {
+  if (link.startsWith("http")) {
+    return link;
+  }
+  if (link === "blog" || link === "/blog") {
+    return link;
+  }
+  return currentLocale === "en" ? link : `/fr${link}`;
+}
+
+function getFRLinkForCurrentPath() {
+  if (currentPath === "/blog") {
+    return "/blog";
+  }
+  if (currentPath === "/") {
+    return "/fr";
+  }
+  return currentLocale === "en" ? `/fr${currentPath}` : currentPath;
+}
+
+function getENLinkForCurrentPath() {
+  if (currentPath === "/fr") {
+    return "/";
+  }
+  return currentLocale === "fr" ? currentPath.replace("/fr", "") : currentPath;
+}
+
 ---
 
 <header
@@ -95,7 +127,7 @@ const currentPath = `/${trimSlash(new URL(Astro.url).pathname)}`
                             "first:rounded-t last:rounded-b md:hover:bg-gray-100 hover:text-link dark:hover:text-white dark:hover:bg-gray-700 py-2 px-5 block whitespace-no-wrap",
                             { "aw-link-active" : href2 === currentPath}
                           ]}
-                          href={href2}
+                          href={localizeLink(href2)}
                         >
                           {text2}
                         </a>
@@ -109,7 +141,7 @@ const currentPath = `/${trimSlash(new URL(Astro.url).pathname)}`
                     "hover:text-link dark:hover:text-white px-4 py-3 flex items-centers",
                     { "aw-link-active": href === currentPath }
                   ]}
-                  href={href}
+                  href={localizeLink(href)}
                 >
                   {text}
                 </a>
@@ -129,6 +161,10 @@ const currentPath = `/${trimSlash(new URL(Astro.url).pathname)}`
         <div class="flex">
           {showToggleTheme && <ToggleTheme iconClass="w-6 h-6 md:w-5 md:h-5 md:inline-block" />}
 
+        </div>
+        <div>
+          <span class="text-muted dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-gray-700 focus:outline-none focus:ring-4 focus:ring-gray-200 dark:focus:ring-gray-700 rounded-lg text-sm p-2.5 inline-flex items-center"><a href={getFRLinkForCurrentPath()}>FR</a></span> | 
+          <span class="text-muted dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-gray-700 focus:outline-none focus:ring-4 focus:ring-gray-200 dark:focus:ring-gray-700 rounded-lg text-sm p-2.5 inline-flex items-center"><a href={getENLinkForCurrentPath()}>EN</a></span>
         </div>
         {
           actions?.length ? (
