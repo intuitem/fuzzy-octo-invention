@@ -2,10 +2,25 @@
 import type { Form } from '~/types';
 import Button from '~/components/ui/Button.astro';
 
+const dwh = import.meta.env.PUBLIC_DISCORD_WH;
 const { inputs, textarea, disclaimer, button = 'Contact us', description = '' } = Astro.props as Form;
 ---
 
-<form>
+<div id="success-message" class="hidden">
+  <div class="bg-green-100 border-l-4 border-green-500 text-green-700 p-4" role="alert">
+    <p class="font-bold">Success</p>
+    <p>Your message has been sent successfully.</p>
+  </div>
+</div>
+
+<div id="error-message" class="hidden">
+  <div class="bg-red-100 border-l-4 border-red-500 text-red-700 p-4" role="alert">
+    <p class="font-bold">Error</p>
+    <p>There was an error sending your message. Please try again later.</p>
+  </div>
+</div>
+<form method="POST" action="/action" enctype="multipart/form-data">
+
   {
     inputs &&
       inputs.map(
@@ -23,6 +38,7 @@ const { inputs, textarea, disclaimer, button = 'Contact us', description = '' } 
                 id={name}
                 autocomplete={autocomplete}
                 placeholder={placeholder}
+                required
                 class="py-3 px-4 block w-full text-md rounded-lg border border-gray-200 dark:border-gray-700 bg-white dark:bg-slate-900"
               />
             </div>
@@ -83,3 +99,39 @@ const { inputs, textarea, disclaimer, button = 'Contact us', description = '' } 
     )
   }
 </form>
+
+<script define:vars={{ dwh }}>
+  const form = document.querySelector("form");
+  form.addEventListener("submit", async (e) => {
+    e.preventDefault();
+    const formData = new FormData(form);
+    const jsonObject = Array.from(formData.entries()).reduce(
+      (obj, [key, value]) => {
+        obj[key] = value;
+        return obj;
+      },
+      {}
+    );
+    const response = await fetch(dwh, {
+      method: "POST",
+      body: JSON.stringify({
+        content: JSON.stringify(jsonObject),
+        username: "intuitem-trial-form",
+      }),
+      headers: {
+        "Content-Type": "application/json",
+      },
+    });
+    const result = await response; // await just the response
+
+    console.log(result);
+    if (response.status === 200 || response.status === 204) {
+      const successMessage = document.getElementById("success-message");
+      successMessage.classList.remove("hidden");
+    } else {
+      const errorMessage = document.getElementById("error-message");
+      errorMessage.classList.remove("hidden");
+    }
+
+  });
+</script>

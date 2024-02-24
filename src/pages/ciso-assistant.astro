@@ -24,19 +24,8 @@ const features = await sanityClient.fetch(`*[_type == "feature"]`);
   <Fragment slot="header">
     <Header
       {...headerData}
-      actions={[
-        {
-          variant: 'secondary',
-          text: 'Login',
-          href: '#',
-        },
-        {
-          variant: 'primary',
-          text: 'Sign Up',
-          href: '#',
-        },
-      ]}
       isSticky
+      showToggleTheme
     />
   </Fragment>
 
@@ -60,11 +49,9 @@ const features = await sanityClient.fetch(`*[_type == "feature"]`);
     </Fragment>
 
     <Fragment slot="subtitle">
-      <span class="hidden sm:inline">
-        Elevate your website creation process with <span class="font-semibold">AstroWind</span>'s SaaS solutions.</span
-      >
-       Seamlessly blend the power of Astro 4.0 and Tailwind CSS to craft websites that resonate with your brand and
-      audience.
+      <span class="">
+        Cyber security program management can be challenging regardless of the size of your company.  <span class="font-semibold">CISO Assistant</span> one-stop-shop approach 
+       provides a pragmatic way to handle the complexity of GRC (Governance, Risk and Compliance) and make the tools work for you instead of the other way around.
     </Fragment>
   </Hero2>
 
