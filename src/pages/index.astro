@@ -5,6 +5,7 @@ import Features from '~/components/widgets/Features.astro';
 import Steps from '~/components/widgets/Steps.astro';
 import CallToAction from '~/components/widgets/CallToAction.astro';
 import Brands from '~/components/widgets/Brands.astro';
+import BlogLatestPosts from '~/components/widgets/BlogLatestPosts.astro';
 
 import { sanityClient } from 'sanity:client';
 import PortableText from '~/components/portabletext/PortableText.astro';
@@ -73,12 +74,18 @@ const transformedBrands = referenceBrands.map(brand => ({
   <!-- Features Widget *************** -->
 
   <Features
-    id="features"
+  id="features"
     tagline="Features"
     title="What you get with CISO Assistant"
     subtitle="Learn more about the features that make CISO Assistant the best choice for your security team. We are constantly working to improve our product, so stay tuned for more features!"
     items={featuresContent}
-  />
+    >
+    <Fragment slot="bg">
+      <div class="absolute inset-0 bg-blue-50 dark:bg-transparent"></div>
+    </Fragment>
+    
+
+  </Features>
 
   <!-- Steps Widget ****************** -->
 
@@ -118,6 +125,7 @@ const transformedBrands = referenceBrands.map(brand => ({
       src: 'https://images.unsplash.com/photo-1616198814651-e71f960c3180?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=987&q=80',
       alt: 'Steps image',
     }}
+
   />
 
   <!-- Brands Widget ****************** -->
@@ -153,5 +161,16 @@ const transformedBrands = referenceBrands.map(brand => ({
       Nothing better than a free instance to test it out and find out how CISO Assistant can help you. Don't waste more
       time on low values operations and start focusing on what really matters.
     </Fragment>
+
   </CallToAction>
+
+  <BlogLatestPosts
+  id="blog"
+  title="Stay informed with AstroWind's blog"
+  information={`Explore our collection of articles, guides, and tutorials on web development, design trends, and using AstroWind effectively for your projects.`}
+>
+  <Fragment slot="bg">
+    <div class="absolute inset-0 bg-blue-50 dark:bg-transparent"></div>
+  </Fragment>
+</BlogLatestPosts>
 </Layout>

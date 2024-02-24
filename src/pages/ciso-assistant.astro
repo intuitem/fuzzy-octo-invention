@@ -133,7 +133,7 @@ const useCases = await sanityClient.fetch(`*[_type == "useCase"]{
       {
         title: 'pro',
         subtitle: 'Premium templates and advanced customization',
-        price: 15,
+        price: 29,
         period: '/ Month',
         callToAction: {
           target: '_blank',
@@ -146,8 +146,9 @@ const useCases = await sanityClient.fetch(`*[_type == "useCase"]{
       {
         title: 'Enterprise',
         subtitle: 'Tailored solutions for large-scale projects',
-        price: 45,
+        price: "-",
         period: '/ Month',
+        isCustom: true,
         callToAction: {
           target: '_blank',
           text: 'Unlock Enterprise Features',
@@ -221,13 +222,5 @@ const useCases = await sanityClient.fetch(`*[_type == "useCase"]{
 
   <!-- BlogLatestPost Widget **************** -->
 
-  <BlogLatestPosts
-    id="blog"
-    title="Stay informed with AstroWind's blog"
-    information={`Explore our collection of articles, guides, and tutorials on web development, design trends, and using AstroWind effectively for your projects.`}
-  >
-    <Fragment slot="bg">
-      <div class="absolute inset-0 bg-blue-50 dark:bg-transparent"></div>
-    </Fragment>
-  </BlogLatestPosts>
+
 </Layout>
