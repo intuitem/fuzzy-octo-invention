@@ -5,6 +5,7 @@ import Features from '~/components/widgets/Features.astro';
 import Steps from '~/components/widgets/Steps.astro';
 import CallToAction from '~/components/widgets/CallToAction.astro';
 import Brands from '~/components/widgets/Brands.astro';
+import BlogLatestPosts from '~/components/widgets/BlogLatestPosts.astro';
 
 import { sanityClient } from 'sanity:client';
 import PortableText from '~/components/portabletext/PortableText.astro';
@@ -51,7 +52,7 @@ const transformedBrands = referenceBrands.map(brand => ({
       {
         variant: 'primary',
         text: 'Commencer',
-        href: '/contact',
+        href: '/fr/trial',
         icon: 'tabler:cloud',
       },
       { text: 'Fonctionnalités', href: '#features', icon: 'tabler:mood-plus'},
@@ -78,41 +79,45 @@ const transformedBrands = referenceBrands.map(brand => ({
     title="Ce que vous obtenez avec CISO Assistant"
     subtitle="Découvrez comment CISO Assistant peut vous aider à améliorer votre sécurité et optimiser votre temps."
     items={featuresContent}
-  />
+  >
+    <Fragment slot="bg">
+      <div class="absolute inset-0 bg-blue-50 dark:bg-transparent"></div>
+    </Fragment>
 
   
+</Features>
 
   <!-- Steps Widget ****************** -->
 
   <Steps
-    title="Let CISO Assistant work for you in no time in easy simple steps"
+    title="Laissez CISO Assistant travailler pour vous en un rien de temps, avec quelques étapes simples"
     items={[
       {
-        title: 'Step 1: <span class="font-medium">Choose your deployment</span>',
+        title: 'Etape 1 : <span class="font-medium">Choisissez votre déploiement</span>',
         description:
-          "Kickstart with the free instance or GitHub! The choice is yours. We're here to make your journey as smooth as possible. So, take your pick and let's get started!",
+          "Lancez-vous avec l’instance gratuite ou GitHub ! Le choix vous appartient. Nous sommes là pour rendre votre voyage aussi fluide que possible. Alors, faites votre choix et commençons !",
         icon: 'tabler:package',
       },
       {
-        title: 'Step 2.a: <span class="font-medium">Experiment and Add your content</span>',
+        title: 'Etape 2.a : <span class="font-medium">Expérimentez et ajoutez votre contenu</span>',
         description:
-          "Follow the documentation to get started with CISO assistant. You can add your own content and experiment with the features. We're here to help you every step of the way on our Discord server.",
+          "Suivez la documentation pour commencer à utiliser CISO Assistant. Vous pouvez ajouter votre propre contenu et tester les fonctionnalités. Nous sommes là pour vous aider à chaque étape du processus sur notre serveur Discord.",
         icon: 'tabler:letter-case',
       },
       {
-        title: 'Step 2.b: <span class="font-medium">Discuss specific features/needs</span>',
+        title: 'Etape 2.b : <span class="font-medium">Discutez des caractéristiques et des besoins spécifiques</span>',
         description:
-          'Either you are looking for a specific feature or you have a specific need, we are here to help you. Any customization will be covered by the enterprise plan support and can be tailored to your needs.',
+          'Que vous soyez à la recherche d’une fonctionnalité spécifique ou que vous ayez un besoin particulier, nous sommes là pour vous aider. Toute personnalisation sera couverte par le support du plan d’entreprise et pourra être adaptée à vos besoins.',
         icon: 'tabler:paint',
       },
 {
-        title: 'Step 3: <span class="font-medium">Upgrade your plan</span>',
+        title: 'Etape 3 : <span class="font-medium">Mettez à niveau votre souscription</span>',
         description:
-          'If you are happy with the community edition then we are happy for you. We encourage you to upgrade to Pro or Enterprise to get the most out of CISO Assistant and data migration is guaranteed.',
+          'Si vous êtes satisfait de l’édition communautaire, nous sommes heureux pour vous. Nous vous encourageons à passer à la version Pro ou Enterprise pour tirer le meilleur parti de CISO Assistant et avec une migration des données garantie.',
         icon: 'tabler:rocket',
       },
       {
-        title: 'Ready!',
+        title: 'Prêt !',
         icon: 'tabler:check',
       },
     ]}
@@ -120,13 +125,14 @@ const transformedBrands = referenceBrands.map(brand => ({
       src: 'https://images.unsplash.com/photo-1616198814651-e71f960c3180?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=987&q=80',
       alt: 'Steps image',
     }}
+
   />
 
   <!-- Brands Widget ****************** -->
 
   <Brands
-    title="References & Collaborations"
-    subtitle="Some of the organizations that we had the pleasure to work with:"
+    title="Références & Collaborations"
+    subtitle="Quelques organisations avec lesquelles nous avons eu le plaisir de collaborer :"
     icons={[]}
     images={transformedBrands}
   />
@@ -137,23 +143,32 @@ const transformedBrands = referenceBrands.map(brand => ({
     actions={[
       {
         variant: 'primary',
-        text: 'Free instance',
-        href: '/contact',
+        text: 'Commencer',
+        href: '/fr/trial',
         icon: 'tabler:cloud',
       },
       {
         variant: 'secondary',
-        text: 'Walkthrough',
-        href: '/ciso-assistant',
+        text: "Plus d’informations",
+        href: '/fr/ciso-assistant',
         icon: 'tabler:mood-plus',
       },
     ]}
   >
-    <Fragment slot="title"> Ready to get started? </Fragment>
+    <Fragment slot="title"> Prêt pour vous lancer ? </Fragment>
 
     <Fragment slot="subtitle">
-      Nothing better than a free instance to test it out and find out how CISO Assistant can help you. Don't waste more
-      time on low values operations and start focusing on what really matters.
+      Rien de plus simple que de commencer avec CISO Assistant. Choisissez votre instance cloud gratuite ou la version community sur GitHub et expérimenter la puissance de CISO Assistant dès aujourd’hui.
     </Fragment>
   </CallToAction>
+
+  <BlogLatestPosts
+  id="blog"
+  title="Restez à jour avec nos publications"
+  information={`Explorez nos dernières publications sur la cybersécurité, infrastructures, data et bien plus encore.`}
+>
+  <Fragment slot="bg">
+    <div class="absolute inset-0 bg-blue-50 dark:bg-transparent"></div>
+  </Fragment>
+</BlogLatestPosts>
 </Layout>
