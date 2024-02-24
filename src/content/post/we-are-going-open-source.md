@@ -1,15 +1,12 @@
 ---
-publishDate: 2023-09-20T00:00:00Z
+draft: false
+title: "We are Going Open Source"
+category: "News"
 author: Abderrahmane Smimite
-title: We are Going Open Source
-excerpt: intuitem finally publishing all ongoing development to open source
+publishDate: 2023-09-20T19:25:00Z
 image: https://images.unsplash.com/photo-1569017388730-020b5f80a004?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=430&q=80
-category: Anouncements
-tags:
-  - open source
-  - ciso assistant
-metadata:
-  canonical: https://astrowind.vercel.app/get-started-website-with-astro-tailwind-css
+excerpt: "Five common mistakes that executives keep repeating about cyber security and some actionable insights on how to deal with them"
+tags: ["cybersecurity", "ciso-assistant", "open source", "community", "GRC"]
 ---
 
 Hello to our valued customers, partners, and the cybersecurity community,
