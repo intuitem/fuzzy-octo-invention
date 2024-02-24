@@ -19,8 +19,8 @@ export const headerData = {
       text: 'Ressources',
       links: [
         {
-          text: 'Contact',
-          href: getPermalink('/contact'),
+          text: 'Trial',
+          href: getPermalink('/trial'),
         },
         {
           text: 'Docs',
@@ -39,6 +39,10 @@ export const headerData = {
         {
           text: 'Support',
           href: getPermalink('/support'),
+        },
+        {
+          text: 'Contact',
+          href: getPermalink('/contact'),
         },
 
       ],
