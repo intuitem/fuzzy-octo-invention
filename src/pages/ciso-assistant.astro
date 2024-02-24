@@ -43,12 +43,12 @@ const useCases = await sanityClient.fetch(`*[_type == "useCase"]{
   <Hero2
     tagline="CISO Assistant"
     actions={[
-      { variant: 'primary', target: '_blank', text: 'Get Started', href: 'https://github.com/onwidget/astrowind' },
-      { text: 'Use cases', href: '#features' },
+      { variant: 'primary', text: 'Get Started', href: '/trial' },
+      { text: 'Use cases', href: '#use-cases' },
     ]}
     image={{
-      src: 'https://images.unsplash.com/photo-1580481072645-022f9a6dbf27?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80',
-      alt: 'AstroWind Hero Image',
+      src: '~/assets/images/hero.png',
+      alt: 'CISO Assistant Octopus',
     }}
   >
     <Fragment slot="title">
@@ -69,6 +69,7 @@ const useCases = await sanityClient.fetch(`*[_type == "useCase"]{
 
   <Content
   title="Use cases"
+  id="use-cases"
   subtitle="Discover how CISO Assistant can help for various use cases, providing a pragmatic approach to drive your cyber security program."
   items={[]}
 >
