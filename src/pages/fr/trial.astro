@@ -12,16 +12,16 @@ const metadata = {
 <Layout metadata={metadata}>
   <!-- HeroText Widget ******************* -->
 
-  <HeroText tagline="Trial" title="Start now!" />
+  <HeroText tagline="Essai" title="Commencer maintenant !" />
 
   <ContactUs
-    title="Free Trial instance"
-    subtitle="Get started with a free trial instance of our platform for 90 days. Your data is safe and secure in an isolated environment. Data can be migrated to a production instance at any time."
+    title="Instance cloud gratuite"
+    subtitle="Démarrer votre essai gratuit dès maintenant. Vos données sont sécurisées sur un environnement isolé. Vous pouvez migrer votre instance vers un environnement de production à tout moment."
     inputs={[
       {
         type: 'text',
         name: 'name',
-        label: 'Name*',
+        label: 'Nom complet*',
       },
       {
         type: 'email',
@@ -31,18 +31,18 @@ const metadata = {
       {
         type: 'text',
         name: 'organization',
-        label: 'Organization*',
+        label: 'Organisation*',
       },
     ]}
     textarea={{
-      label: 'Specific questions or comments',
+      label: 'Questions ou commentaires',
     }}
     disclaimer={{
       label:
         'By submitting this contact form, you acknowledge and agree to our privacy policy and terms & conditions. You also consent to be contacted by us via phone and email. You can unsubscribe at any time.',
     }}
     description="The trial instance will be available shortly after. No credit card required."
-    button='Start now'
+    button='Démarrez maintenant'
   />
 
 </Layout>
