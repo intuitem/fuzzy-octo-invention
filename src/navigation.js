@@ -72,7 +72,7 @@ export const footerData = {
     {
       title: 'Ressources',
       links: [
-        { text: 'Docs', href: '#' },
+        { text: 'Trial', href: '/trial' },
         { text: 'Blog', href: '#' },
         { text: 'Discord', href: '#' },
         { text: 'Contact', href: '#' },
@@ -99,11 +99,11 @@ export const footerData = {
   ],
   secondaryLinks: [
     { text: 'Terms', href: getPermalink('/terms') },
-    { text: 'Privacy Policy', href: getPermalink('/privacy') },
+    { text: 'Privacy', href: getPermalink('/privacy') },
   ],
   socialLinks: [
-    { ariaLabel: 'LinkedIn', icon: 'tabler:brand-linkedin', href: '#' },
-    { ariaLabel: 'Discord', icon: 'tabler:brand-discord', href: '#' },
+    { ariaLabel: 'LinkedIn', icon: 'tabler:brand-linkedin', href: 'https://www.linkedin.com/company/intuitem' },
+    { ariaLabel: 'Discord', icon: 'tabler:brand-discord', href: 'https://discord.gg/qvkaMdQ8da' },
     { ariaLabel: 'Github', icon: 'tabler:brand-github', href: 'https://github.com/intuitem' },
   ],
   footNote: `
