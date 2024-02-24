@@ -1,22 +1,21 @@
 ---
 import Layout from '~/layouts/PageLayout.astro';
-
 import Hero from '~/components/widgets/Hero.astro';
-
 import Features from '~/components/widgets/Features.astro';
-
 import Steps from '~/components/widgets/Steps.astro';
-
 import CallToAction from '~/components/widgets/CallToAction.astro';
 import Brands from '~/components/widgets/Brands.astro';
+
+import { sanityClient } from 'sanity:client';
+import PortableText from '~/components/portabletext/PortableText.astro';
+
 const metadata = {
-  title: 'AstroWind — Free template for creating websites with Astro + Tailwind CSS',
+  title: 'intuitem - Open source CISO Assistant - GRC',
+  description:
+    'intuitem provides products and services on cyber security and infrastructure management. CISO Assistant is a one-stop-shop open source solution that helps security teams to manage their GRC activities. Available in community, pro and enterprise editions.',
   ignoreTitleTemplate: true,
 };
 
-import PortableText from "~/components/portabletext/PortableText.astro";
-
-import { sanityClient } from "sanity:client";
 const heroSection = await sanityClient.fetch(`*[_type == "siteSection" && slug == "hero"]{
     slug,
     "body": body[_key == "fr"][0].value,
@@ -29,7 +28,19 @@ const featuresContent = await sanityClient.fetch(`*[_type == "feature"]{
   slug,
 } | order(slug asc)`);
 
+const referenceBrands = await sanityClient.fetch(`*[_type == "referenceBrand"]{
+  name,
+  "imageUrl":logo.asset->url
+}`);
 
+function adjustImageUrl(ref) {
+  return `${ref}`;
+}
+
+const transformedBrands = referenceBrands.map(brand => ({
+  src: adjustImageUrl(brand.imageUrl),
+  alt: brand.name
+}));
 ---
 
 <Layout metadata={metadata}>
@@ -56,11 +67,8 @@ const featuresContent = await sanityClient.fetch(`*[_type == "feature"]{
       <div class="text-lg text-gray-500 dark:text-gray-400 pb-4">
         <PortableText value={heroSection[0].body} />
       </div>
-      
-    </Fragment>
+          </Fragment>
   </Hero>
-
-
 
   <!-- Features Widget *************** -->
 
@@ -114,60 +122,14 @@ const featuresContent = await sanityClient.fetch(`*[_type == "feature"]{
     }}
   />
 
-
-
-
-
-  
-
   <!-- Brands Widget ****************** -->
 
   <Brands
     title="References & Collaborations"
     subtitle="Some of the organizations that we had the pleasure to work with:"
     icons={[]}
-    images={[
-      {
-        src: 'https://cdn.pixabay.com/photo/2015/05/26/09/37/paypal-784404_1280.png',
-        alt: 'Paypal',
-      },
-      {
-        src: 'https://cdn.pixabay.com/photo/2021/12/06/13/48/visa-6850402_1280.png',
-        alt: 'Visa',
-      },
-      {
-        src: 'https://cdn.pixabay.com/photo/2013/10/01/10/29/ebay-189064_1280.png',
-        alt: 'Ebay',
-      },
-
-      {
-        src: 'https://cdn.pixabay.com/photo/2015/04/13/17/45/icon-720944_1280.png',
-        alt: 'Youtube',
-      },
-      {
-        src: 'https://cdn.pixabay.com/photo/2013/02/12/09/07/microsoft-80658_1280.png',
-        alt: 'Microsoft',
-      },
-      {
-        src: 'https://cdn.pixabay.com/photo/2015/04/23/17/41/node-js-736399_1280.png',
-        alt: 'Node JS',
-      },
-      {
-        src: 'https://cdn.pixabay.com/photo/2015/10/31/12/54/google-1015751_1280.png',
-        alt: 'Google',
-      },
-      {
-        src: 'https://cdn.pixabay.com/photo/2021/12/06/13/45/meta-6850393_1280.png',
-        alt: 'Meta',
-      },
-      {
-        src: 'https://cdn.pixabay.com/photo/2013/01/29/22/53/yahoo-76684_1280.png',
-        alt: 'Yahoo',
-      },
-    ]}
+    images={transformedBrands}
   />
-
-
 
   <!-- CallToAction Widget *********** -->
 
@@ -187,13 +149,11 @@ const featuresContent = await sanityClient.fetch(`*[_type == "feature"]{
       },
     ]}
   >
-    <Fragment slot="title">
-      Ready to get started?
-    </Fragment>
+    <Fragment slot="title"> Ready to get started? </Fragment>
 
     <Fragment slot="subtitle">
-      Nothing better than a free instance to test it out and find out how CISO Assistant can help you. Don't
-      waste more time on low values operations and start focusing on what really matters.
+      Nothing better than a free instance to test it out and find out how CISO Assistant can help you. Don't waste more
+      time on low values operations and start focusing on what really matters.
     </Fragment>
   </CallToAction>
 </Layout>
