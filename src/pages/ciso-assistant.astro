@@ -133,38 +133,38 @@ const faqEntries = await sanityClient.fetch(`*[_type == "faqEntry"]{
     prices={[
       {
         title: 'free',
-        subtitle: 'Access to core features and a wide range of templates',
+        subtitle: 'Community edition/support and standard features. Run on your own infrastructure',
         price: '0',
-        period: '/ month',
+        period: 'forever',
         callToAction: {
           target: '_blank',
           text: 'Get Started for Free',
-          href: '#',
+          href: 'https://github.com/intuitem/ciso-assistant-community',
         },
       },
       {
         title: 'pro',
-        subtitle: 'Premium templates and advanced customization',
+        subtitle: 'Priority support, cloud hosting, integration assistance and advanced features',
         price: 29,
-        period: '/ Month',
+        period: '/ editor / Month',
         callToAction: {
           target: '_blank',
           text: 'Upgrade to Pro',
-          href: '#',
+          href: '/contact',
         },
         hasRibbon: true,
         ribbonTitle: 'popular',
       },
       {
         title: 'Enterprise',
-        subtitle: 'Tailored solutions for large-scale projects',
+        subtitle: 'Tailored solutions for large-scale projects including advanced support and features.',
         price: "-",
         period: '/ Month',
         isCustom: true,
         callToAction: {
           target: '_blank',
           text: 'Unlock Enterprise Features',
-          href: '#',
+          href: '/contact',
         },
       },
     ]}
@@ -185,7 +185,7 @@ const faqEntries = await sanityClient.fetch(`*[_type == "faqEntry"]{
 
   <Steps2
     title="Reach out to us"
-    subtitle="Have questions or need assistance shaping your needs and project? Feel free to contact the team using the form below. We're here to help!"
+    subtitle="Have questions or need assistance shaping your needs and projects? Feel free to contact the team using the form below. We're here to help!"
     callToAction={{
       text: 'Contact us',
       href: '/',

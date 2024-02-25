@@ -27,7 +27,7 @@ const services = await sanityClient.fetch(`*[_type == "service"]{
     tagline="Services"
     title="Accelerate and Secure your projects with our consultancy services"
     subtitle="Our mutli-disciplinary team of experts can help you succeed and manage your challenges. The team has extensive experience in multiple industries across the globe. The best part? We're just a click away."
-    actions={[{ variant:"primary", target: '_blank', text: 'Start exploring', href: '/' }]}
+    actions={[{ variant:"primary", text: 'Tell me more', href: '#services' }]}
     image={{
       src: 'https://images.unsplash.com/photo-1519389950473-47ba0277781c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1740&q=80',
       alt: 'services',
@@ -40,6 +40,7 @@ const services = await sanityClient.fetch(`*[_type == "service"]{
     title="Explore our areas of expertise"
     subtitle="Discover how our seasoned consultants can help you succeed and manage your challenges."
     columns={3}
+    id="services"
     items={services}
   />
 
