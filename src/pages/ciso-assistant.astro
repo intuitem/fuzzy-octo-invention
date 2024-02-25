@@ -96,11 +96,11 @@ const faqEntries = await sanityClient.fetch(`*[_type == "faqEntry"]{
     isReversed={index % 2 === 0}
       items={[
         {
-          title: 'Description:',
+          title: 'Description',
           description: useCase.description,
         },
         {
-          title: 'Benefits:',
+          title: 'Benefits',
           description: useCase.benefits,
         },
       ]}
@@ -111,7 +111,7 @@ const faqEntries = await sanityClient.fetch(`*[_type == "faqEntry"]{
     >
       <Fragment slot="content">
         <h3 class="text-2xl font-bold tracking-tight dark:text-white sm:text-3xl mb-2">
-          {useCase.title}: <br /><span class="text-2xl">{useCase.subtitle}</span>
+          {useCase.title} <br /><span class="text-2xl">{useCase.subtitle}</span>
       </h3>
       </Fragment>
 
