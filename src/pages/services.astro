@@ -8,6 +8,7 @@ import Layout from '~/layouts/PageLayout.astro';
 
 const metadata = {
   title: 'Services',
+  desciption: "intuitem provides multiple consultancy services on infrastructure, cloud, security, and more. Our team of experts can help you succeed and manage your challenges.",
 };
 
 import { sanityClient } from "sanity:client";
@@ -29,7 +30,7 @@ const services = await sanityClient.fetch(`*[_type == "service"]{
     actions={[{ variant:"primary", target: '_blank', text: 'Start exploring', href: '/' }]}
     image={{
       src: 'https://images.unsplash.com/photo-1519389950473-47ba0277781c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1740&q=80',
-      alt: 'AstroWind Hero Image',
+      alt: 'services',
     }}
   />
 
@@ -158,7 +159,7 @@ const services = await sanityClient.fetch(`*[_type == "service"]{
     callToAction={{
       target: '_blank',
       text: 'More testimonials...',
-      href: 'https://github.com/onwidget/astrowind',
+      href: 'https://linkedin.com',
       icon: 'tabler:chevron-right',
     }}
   />
