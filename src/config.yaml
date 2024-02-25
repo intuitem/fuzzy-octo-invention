@@ -11,7 +11,7 @@ metadata:
   title:
     default: intuitem
     template: '%s — intuitem'
-  description: "\U0001F680 Suitable for Startups, Small Business, Sass Websites, Professional Portfolios, Marketing Websites, Landing Pages & Blogs."
+  description: "\U0001F419 intuitem is a French company specialized in cyber security and infrastructure management. We are a team of passionate and experienced engineers, who are dedicated to providing the best solutions to our clients. CISO Assistant is our main product, a one-stop-shop that helps CISOs and cyber security practionners manage their security program. We also provide consulting services and audits. 🚀"
   robots:
     index: true
     follow: true
@@ -23,8 +23,8 @@ metadata:
         height: 628
     type: website
   twitter:
-    handle: '@onwidget'
-    site: '@onwidget'
+    handle: '@asmimite'
+    site: '@asmimite'
     cardType: summary_large_image
 
 i18n:
