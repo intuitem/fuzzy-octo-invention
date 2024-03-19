@@ -144,7 +144,7 @@ const faqEntries = await sanityClient.fetch(`*[_type == "faqEntry"]{
       },
       {
         title: 'pro',
-        subtitle: 'Priority support, cloud hosting, integration assistance and advanced features',
+        subtitle: 'Priority support, cloud hosting or on-premises, integration assistance and advanced features',
         price: 29,
         period: '/ editor / Month',
         callToAction: {
@@ -174,6 +174,7 @@ const faqEntries = await sanityClient.fetch(`*[_type == "faqEntry"]{
 
   <FAQs
     title="Frequently Asked Questions"
+    id="faq"
     items={faqEntries}
   >
     <Fragment slot="bg">
