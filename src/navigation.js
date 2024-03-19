@@ -24,21 +24,19 @@ export const headerData = {
         },
         {
           text: 'Docs',
-          href: 'https://intuitem.gitbook.io/product-docs/',
+          target: '_blank',
+          href: 'https://intuitem.gitbook.io/ciso-assistant/',
           skipUrlLocalization: true,
         },
         {
           text: 'Open Source',
+          target: '_blank',
           href: 'https://github.com/intuitem/',
           skipUrlLocalization: true,
         },
         {
           text: 'FAQ',
-          href: getPermalink('/faq'),
-        },
-        {
-          text: 'Support',
-          href: getPermalink('/support'),
+          href: getPermalink('/ciso-assistant#faq'),
         },
         {
           text: 'Contact',
@@ -54,7 +52,7 @@ export const headerData = {
 
     },
   ],
-  actions: [{ text: 'Community', href: 'https://github.com/intuitem/ciso-assistant-community', target: '_blank' }],
+  actions: [{ text: 'Community', href: 'https://github.com/intuitem/ciso-assistant-community', target: '_blank', icon: 'tabler:brand-github' }],
 };
 
 export const footerData = {
@@ -73,16 +71,16 @@ export const footerData = {
       title: 'Ressources',
       links: [
         { text: 'Trial', href: '/trial' },
-        { text: 'Blog', href: '#' },
-        { text: 'Discord', href: '#' },
-        { text: 'Contact', href: '#' },
-        { text: 'Contrib', href: '#' },
+        { text: 'Blog', href: '/blog' },
+        { text: 'Discord', href: 'https://discord.gg/qvkaMdQ8da' },
+        { text: 'Contact', href: '/contact' },
+        { text: 'Contrib', href: 'https://github.com/intuitem/ciso-assistant-community' },
       ],
     },
     {
       title: 'Support',
       links: [
-        { text: 'Portal', href: '#' },
+        { text: 'FAQ', href: '/ciso-assistant#faq' },
         { text: 'Docs', href: '#' },
         { text: 'Discord', href: '#' },
       ],
