@@ -81,8 +81,8 @@ export const footerData = {
       title: 'Support',
       links: [
         { text: 'FAQ', href: '/ciso-assistant#faq' },
-        { text: 'Docs', href: '#' },
-        { text: 'Discord', href: '#' },
+        { text: 'Docs', href: 'https://intuitem.gitbook.io/ciso-assistant/' },
+        { text: 'Discord', href: 'https://discord.gg/qvkaMdQ8da' },
       ],
     },
     {
