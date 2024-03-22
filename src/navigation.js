@@ -63,7 +63,6 @@ export const footerData = {
         { text: 'CISO Assistant', href: '/ciso-assistant' },
         { text: 'Use cases', href: '/ciso-assistant#use-cases' },
         { text: 'Pricing', href: '/pricing' },
-        { text: 'Customization', href: '/customization' },
         { text: 'Services', href: '/services' },
       ],
     },
@@ -80,18 +79,18 @@ export const footerData = {
     {
       title: 'Support',
       links: [
-        { text: 'FAQ', href: '/ciso-assistant#faq' },
-        { text: 'Docs', href: 'https://intuitem.gitbook.io/ciso-assistant/' },
         { text: 'Discord', href: 'https://discord.gg/qvkaMdQ8da' },
+        { text: 'Docs', href: 'https://intuitem.gitbook.io/ciso-assistant/' },
+        { text: 'FAQ', href: '/ciso-assistant#faq' },
       ],
     },
     {
       title: 'Company',
       links: [
         { text: 'About us', href: '#' },
-        { text: 'Diversity', href: '#' },
+        { text: 'Diversity', href: '/diversity' },
         { text: 'Mission', href: '#' },
-        { text: 'References', href: '#' },
+        { text: 'References', href: '/#references' },
       ],
     },
   ],
