@@ -13,11 +13,15 @@ import FAQs from '~/components/widgets/FAQs.astro';
 import BlogLatestPosts from '~/components/widgets/BlogLatestPosts.astro';
 
 const metadata = {
-  title: 'SaaS Landing Page',
+  title: 'CISO Assistant - cyber arms for your security program',
+  description:
+    'CISO Assistant is a pragmatic approach to handle the complexity of GRC (Governance, Risk and Compliance) and make the tools work for you instead of the other way around.',
 };
 
 import { sanityClient } from "sanity:client";
+
 const features = await sanityClient.fetch(`*[_type == "feature"]`);
+
 const useCases = await sanityClient.fetch(`*[_type == "useCase"]{
   slug,
   "title":title[_key == "fr"][0].value,
@@ -25,8 +29,15 @@ const useCases = await sanityClient.fetch(`*[_type == "useCase"]{
   "description":description[_key == "fr"][0].value,
   "benefits":benefits[_key == "fr"][0].value,
   "image":image.asset->url
-  
 } | order(slug asc)`);
+
+const faqEntries = await sanityClient.fetch(`*[_type == "faqEntry"]{
+  slug,
+  "title":question[_key == "fr"][0].value,
+  "description":answer[_key == "fr"][0].value,
+  "icon":icon
+} | order(slug asc)
+`);
 ---
 
 <Layout metadata={metadata}>
@@ -52,9 +63,9 @@ const useCases = await sanityClient.fetch(`*[_type == "useCase"]{
     }}
   >
     <Fragment slot="title">
-      GRC can be tough:<br /> let <span class="text-accent dark:text-white highlight"
+      La GRC peut devenir compliquée :<br /><span class="text-accent dark:text-white highlight"
         >CISO Assistant</span
-      > help you<br />
+      > vous simplifie la vie<br />
     </Fragment>
 
     <Fragment slot="subtitle">
@@ -85,11 +96,11 @@ const useCases = await sanityClient.fetch(`*[_type == "useCase"]{
     isReversed={index % 2 === 0}
       items={[
         {
-          title: 'Description:',
+          title: 'Description',
           description: useCase.description,
         },
         {
-          title: 'Benefits:',
+          title: 'Benefits',
           description: useCase.benefits,
         },
       ]}
@@ -100,7 +111,7 @@ const useCases = await sanityClient.fetch(`*[_type == "useCase"]{
     >
       <Fragment slot="content">
         <h3 class="text-2xl font-bold tracking-tight dark:text-white sm:text-3xl mb-2">
-          {useCase.title}: <br /><span class="text-2xl">{useCase.subtitle}</span>
+          {useCase.title} <br /><span class="text-2xl">{useCase.subtitle}</span>
       </h3>
       </Fragment>
 
@@ -122,38 +133,38 @@ const useCases = await sanityClient.fetch(`*[_type == "useCase"]{
     prices={[
       {
         title: 'free',
-        subtitle: 'Access to core features and a wide range of templates',
+        subtitle: 'Community edition/support and standard features. Run on your own infrastructure',
         price: '0',
-        period: '/ month',
+        period: 'forever',
         callToAction: {
           target: '_blank',
           text: 'Get Started for Free',
-          href: '#',
+          href: 'https://github.com/intuitem/ciso-assistant-community',
         },
       },
       {
         title: 'pro',
-        subtitle: 'Premium templates and advanced customization',
+        subtitle: 'Priority support, cloud hosting or on-premises, integration assistance and advanced features',
         price: 29,
-        period: '/ Month',
+        period: '/ editor / Month',
         callToAction: {
           target: '_blank',
           text: 'Upgrade to Pro',
-          href: '#',
+          href: '/contact',
         },
         hasRibbon: true,
         ribbonTitle: 'popular',
       },
       {
         title: 'Enterprise',
-        subtitle: 'Tailored solutions for large-scale projects',
+        subtitle: 'Tailored solutions for large-scale projects including advanced support and features.',
         price: "-",
         period: '/ Month',
         isCustom: true,
         callToAction: {
           target: '_blank',
           text: 'Unlock Enterprise Features',
-          href: '#',
+          href: '/contact',
         },
       },
     ]}
@@ -163,30 +174,8 @@ const useCases = await sanityClient.fetch(`*[_type == "useCase"]{
 
   <FAQs
     title="Frequently Asked Questions"
-    items={[
-      {
-        title: 'Is AstroWind compatible with the latest versions of Astro and Tailwind CSS?',
-        description:
-          'Yes, AstroWind is designed to be compatible with the latest versions of both Astro and Tailwind CSS. This ensures that you can harness the full capabilities of these technologies while benefiting from the features offered by AstroWind.',
-        icon: 'tabler:chevrons-right',
-      },
-      {
-        title: 'Can I use AstroWind for both personal and commercial projects?',
-        description: `Certainly! AstroWind is versatile and can be used for a wide range of projects, including both personal and commercial endeavors. Whether you're building a professional portfolio, launching a startup, or creating a marketing website, AstroWind has you covered.`,
-        icon: 'tabler:chevrons-right',
-      },
-      {
-        title: 'What level of coding knowledge is required to use AstroWind?',
-        description:
-          'While some familiarity with HTML, CSS, and web development concepts is helpful, the user-friendly interface and customization options allow those with limited coding experience to create impressive websites. For more advanced users, AstroWind offers extensive customization capabilities.',
-        icon: 'tabler:chevrons-right',
-      },
-      {
-        title: 'Is customer support available for AstroWind users seeking guidance?',
-        description: `Absolutely, our dedicated customer support team is here to assist you with any questions or challenges you may encounter. Feel free to reach out to us through our support channels, and we'll be happy to provide the help you need.`,
-        icon: 'tabler:chevrons-right',
-      },
-    ]}
+    id="faq"
+    items={faqEntries}
   >
     <Fragment slot="bg">
       <div class="absolute inset-0 bg-blue-50 dark:bg-transparent"></div>
@@ -197,26 +186,26 @@ const useCases = await sanityClient.fetch(`*[_type == "useCase"]{
 
   <Steps2
     title="Reach out to us"
-    subtitle="Have questions? Feel free to contact us using the form below. We're here to help!"
+    subtitle="Have questions or need assistance shaping your needs and projects? Feel free to contact the team using the form below. We're here to help!"
     callToAction={{
       text: 'Contact us',
       href: '/',
     }}
     items={[
       {
-        title: 'Email us',
-        description: 'contact@support.com',
+        title: 'Email',
+        description: 'contact@intuitem.com',
         icon: 'tabler:mail',
       },
       {
-        title: 'Call us',
-        description: '+1 (234) 567-890',
+        title: 'Call',
+        description: '+33 6 63 06 83 31',
         icon: 'tabler:headset',
       },
       {
-        title: 'Follow us',
-        description: '@example',
-        icon: 'tabler:brand-twitter',
+        title: 'Chat',
+        description: 'intuitem - community',
+        icon: 'tabler:brand-discord',
       },
     ]}
   />
