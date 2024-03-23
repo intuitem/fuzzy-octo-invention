@@ -1,0 +1,30 @@
+---
+import Layout from '~/layouts/LandingLayout.astro';
+
+import Hero from '~/components/widgets/Hero.astro';
+import CallToAction from '~/components/widgets/CallToAction.astro';
+
+const metadata = {
+  title: 'intuitem - disruptive simplicity',
+};
+---
+
+<Layout metadata={metadata}>
+  <!-- Hero2 Widget ******************* -->
+
+  <Hero
+    tagline="CISO Assistant"
+    title="One Stop Shop for Cyber Security Teams for all their GRC needs"
+    subtitle="We keep improving our platform to help CISOs and their teams to manage their GRC needs in a simple and efficient way. Mira capabilities has been merged with CISO Assistant to continue the vision of a one stop shop for all your GRC needs."
+    actions={[
+      { variant: 'primary', text: 'CISO Assistant', href: '/ciso-assistant', icon: 'tabler:square-rounded-arrow-right' },
+      { text: 'services', href: '/services' },
+    ]}
+    image={{
+      src: 'https://images.unsplash.com/photo-1597423498219-04418210827d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1674&q=80',
+      alt: 'hero image',
+    }}
+  />
+
+
+</Layout>
