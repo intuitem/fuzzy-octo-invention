@@ -1,0 +1,56 @@
+---
+import Layout from '~/layouts/PageLayout.astro';
+import HeroText from '~/components/widgets/HeroText.astro';
+import Prices from '~/components/widgets/Pricing.astro';
+import FAQs from '~/components/widgets/FAQs.astro';
+import Steps from '~/components/widgets/Steps.astro';
+import Features3 from '~/components/widgets/Features3.astro';
+import CallToAction from '~/components/widgets/CallToAction.astro';
+import { sanityClient } from "sanity:client";
+
+const metadata = {
+  title: 'FAQ',
+};
+
+const faqEntries = await sanityClient.fetch(`*[_type == "faqEntry"]{
+  slug,
+  "title":question[_key == "fr"][0].value,
+  "description":answer[_key == "fr"][0].value,
+  "icon":icon
+} | order(slug asc)
+`);
+---
+
+<Layout metadata={metadata}>
+  <!-- HeroText Widget ******************* -->
+
+  <HeroText
+    tagline="FAQ"
+    title="Frequently Asked Questions"
+    subtitle="Check the knowledge base or reach the team on Discord."
+  />
+
+
+
+
+  <FAQs
+    title="Knowledge Base"
+    subtitle="Here are some of the most common questions we get asked about our services."
+    columns={1}
+    items={faqEntries}
+  />
+
+  <!-- CallToAction Widget *********** -->
+
+  <CallToAction
+    title="Ready to boost your cyber security posture?"
+    subtitle="Join our community of satisfied customers and enjoy the benefits of CISO Assistant."
+    actions={[
+      {
+        variant: 'primary',
+        text: 'Get started now',
+        href: '/ciso-assistant',
+      },
+    ]}
+  />
+</Layout>
