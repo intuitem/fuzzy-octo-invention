@@ -54,8 +54,8 @@ const faqEntries = await sanityClient.fetch(`*[_type == "faqEntry"]{
   <Hero2
     tagline="CISO Assistant"
     actions={[
-      { variant: 'primary', text: 'Get Started', href: '/trial' },
-      { text: 'Use cases', href: '#use-cases' },
+      { variant: 'primary', text: 'Essayer', href: '/trial' },
+      { text: "cas d'usage", href: '#use-cases' },
     ]}
     image={{
       src: '~/assets/images/hero.png',
@@ -70,8 +70,7 @@ const faqEntries = await sanityClient.fetch(`*[_type == "faqEntry"]{
 
     <Fragment slot="subtitle">
       <span class="">
-        Cyber security program management can be challenging regardless of the size of your company.  <span class="font-semibold">CISO Assistant</span> one-stop-shop approach 
-       provides a pragmatic way to handle the complexity of GRC (Governance, Risk and Compliance) and make the tools work for you instead of the other way around.
+        La gestion des programmes de cybersécurité peut s'avérer difficile, quelle que soit la taille de votre entreprise. L'approche à guichet unique de <span class=" font-semibold">CISO Assistant</span> offre un moyen pragmatique de gérer la complexité de la GRC (Gouvernance, Risque et Conformité) et de faire en sorte que les outils travaillent pour vous et non l'inverse.
     </Fragment>
   </Hero2>
 
@@ -79,9 +78,9 @@ const faqEntries = await sanityClient.fetch(`*[_type == "faqEntry"]{
   <!-- Content Widget **************** -->
 
   <Content
-  title="Use cases"
+  title="Cas d'usage"
   id="use-cases"
-  subtitle="Discover how CISO Assistant can help for various use cases, providing a pragmatic approach to drive your cyber security program."
+  subtitle="Découvrez comment CISO Assistant peut vous aider dans différents cas d'utilisation, en vous proposant une approche pragmatique pour piloter votre programme de cybersécurité."
   items={[]}
 >
 
