@@ -122,4 +122,4 @@ If we transfer your personal information out of Europe, we will rely on recogniz
 
 #### Contact
 
-Should you have any questions about our privacy practices or this Privacy Policy, or if you would like to exercise any of the rights available to you, please use the contact form or email us at contact@intuitem.com or contact us at 8 rue des frères caudron, Vélizy, 78140, France.
+Should you have any questions about our privacy practices or this Privacy Policy, or if you would like to exercise any of the rights available to you, please use the contact form or email us at contact@intuitem.com or contact us at 8 rue des frères Caudron, Vélizy, 78140, France.
