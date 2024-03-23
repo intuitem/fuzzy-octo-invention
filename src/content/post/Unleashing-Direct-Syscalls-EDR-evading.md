@@ -11,7 +11,7 @@ tags:
   - Syscalls
   - Exploit
 metadata:
-  canonical: https://intuitem.com/direct-syscall-evading-edr
+  canonical: https://intuitem.com/unleashing-direct-syscalls-edr-evading
 ---
 
 However, the evolving sophistication of attacks has prompted malicious hackers to explore new avenues for bypassing the security measures provided by traditional endpoint security solutions. Defenders, on the other hand much like a cat-and-mouse game of security, attempt to devise innovative methods to counter them. This ongoing dynamic leads to the emergence of new products designed to tackle evolving threats, as well as the adaptation, consolidation, or fading away of existing solutions.
