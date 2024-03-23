@@ -6,7 +6,7 @@ export const headerData = {
       text: 'Solutions',
       links: [
         {
-          text: 'Ciso Assistant',
+          text: 'CISO Assistant',
           href: getPermalink('/ciso-assistant'),
         },
         {
