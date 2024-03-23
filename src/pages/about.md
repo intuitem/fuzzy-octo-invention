@@ -22,5 +22,5 @@ We saw a gap in the market for an intuitive, comprehensive, and cost-efficient t
 - [Maël Joumier](https://www.linkedin.com/in/mael-j/)
 - [Killian Mars](https://www.linkedin.com/in/killian-mars/)
 - [Alexis Bensoussan](https://www.linkedin.com/in/alexisbensoussan/)
-- [Maha Abid](https://www.linkedin.com/in/maha-abid/)
+
 

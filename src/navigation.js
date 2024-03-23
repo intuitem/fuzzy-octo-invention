@@ -107,6 +107,6 @@ export const footerData = {
     { ariaLabel: 'Github', icon: 'tabler:brand-github', href: 'https://github.com/intuitem' },
   ],
   footNote: `
-    intuitem - SARL au capital de 100 000,00€ - 8 rue des freres caudron, 78140 Vélizy-Villacoublay - SIRET 84450819200029 RCS Versailles
+    intuitem - SARL au capital de 100 000,00€ - 8 rue des frères Caudron, 78140 Vélizy-Villacoublay - SIRET 84450819200029 RCS Versailles
   `,
 };
