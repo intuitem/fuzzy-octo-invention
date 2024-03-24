@@ -5,7 +5,7 @@ category: tutorials
 author: Abderrahmane Smimite
 publishDate: 2022-10-19T11:39:00Z
 image: https://images.unsplash.com/photo-1593720213428-28a5b9e94613?&fit=crop&w=430&h=240
-snippet: ""
+snippet: "Nginx rewrite rules - the easy way"
 tags: ["nginx", "rewrite", "redirection", "rules"]
 ---
 
