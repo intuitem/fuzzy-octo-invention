@@ -14,8 +14,8 @@ const metadata = {
 import { sanityClient } from "sanity:client";
 const services = await sanityClient.fetch(`*[_type == "service"]{
   slug,
-  "title":title[_key == "en"][0].value,
-  "description":description[_key == "en"][0].value,
+  "title":title[_key == "fr"][0].value,
+  "description":description[_key == "fr"][0].value,
   icon,
 } | order(slug asc)`); 
 ---
