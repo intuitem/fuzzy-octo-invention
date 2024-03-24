@@ -5,7 +5,7 @@ category: articles
 author: Eric Laubacher
 publishDate: 2019-04-03T11:39:00Z
 image: https://images.unsplash.com/photo-1593720213428-28a5b9e94613?&fit=crop&w=430&h=240
-excerpt: ""
+excerpt: "Fundamental cyber security concept"
 tags: ["cloud", "rewrite", "redirection", "rules"]
 ---
 
